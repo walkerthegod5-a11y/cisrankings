@@ -1,0 +1,545 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0d0d0f;
+  color: #e8e8e8;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Универсальная иконка */
+.icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.icon-lg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Хедер */
+header {
+  background: #16161a;
+  border-bottom: 2px solid #2e2e33;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo .ball {
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+}
+
+.logo span {
+  color: #b0b0b8;
+  font-weight: 400;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav a {
+  color: #b8b8c0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 6px 4px;
+  border-bottom: 2px solid transparent;
+  transition: 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Основной контент */
+main {
+  flex: 1;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 25px;
+}
+
+/* Hero-баннер */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 70px 25px;
+  background: radial-gradient(circle at center, #1c1c22 0%, #121214 100%);
+  border: 2px solid #2a2a30;
+  border-radius: 18px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  border: 2px solid rgba(255,255,255,0.08);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: rgba(255,255,255,0.06);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.hero h1 {
+  position: relative;
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hero h1 .icon {
+  width: 42px;
+  height: 42px;
+  color: #ffffff;
+}
+
+.hero h1 span {
+  color: #8f8f9a;
+}
+
+.hero p {
+  position: relative;
+  font-size: 1.1rem;
+  color: #b0b0b8;
+  max-width: 600px;
+  margin: 0 auto 28px;
+}
+
+/* Кнопки */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #ffffff;
+  color: #0d0d0f;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.25s;
+  border: 1px solid #ffffff;
+}
+
+.btn:hover {
+  background: transparent;
+  color: #ffffff;
+}
+
+.btn-discord {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: #5865F2;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid #5865F2;
+  transition: 0.25s;
+}
+
+.btn-discord:hover {
+  background: transparent;
+  color: #5865F2;
+}
+
+.btn-discord svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.discord-cta {
+  text-align: center;
+  background: #16161a;
+  border: 1px solid #2a2a30;
+  border-radius: 16px;
+  padding: 40px 25px;
+  margin-top: 60px;
+}
+
+.discord-cta h2 {
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.discord-cta h2 .icon {
+  width: 26px;
+  height: 26px;
+}
+
+.discord-cta p {
+  color: #a8a8b2;
+  margin-bottom: 22px;
+}
+
+/* Карточки */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #16161a;
+  border: 1px solid #2a2a30;
+  border-radius: 12px;
+  padding: 25px;
+  transition: 0.25s;
+  position: relative;
+}
+
+.card:hover {
+  border-color: #6a6a76;
+  transform: translateY(-3px);
+}
+
+.card .card-icon {
+  width: 40px;
+  height: 40px;
+  fill: #ffffff;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.card h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card h3 .icon {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+
+.card p {
+  color: #a8a8b2;
+  font-size: 0.95rem;
+}
+
+/* Турнирная таблица */
+.table-wrap {
+  margin-top: 35px;
+  border: 1px solid #2a2a30;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table.rankings {
+  width: 100%;
+  border-collapse: collapse;
+  background: #16161a;
+}
+
+table.rankings th,
+table.rankings td {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+table.rankings thead {
+  background: #1f1f25;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+table.rankings thead th {
+  display: table-cell;
+  white-space: nowrap;
+}
+
+table.rankings tbody tr {
+  border-top: 1px solid #232329;
+  transition: background 0.2s;
+}
+
+table.rankings tbody tr:hover {
+  background: #1b1b21;
+}
+
+table.rankings td.pts {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+table.rankings td.pos {
+  font-weight: 800;
+  color: #8f8f9a;
+}
+
+/* Медальки для топ-3 */
+.medal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 0.85rem;
+  background: #232329;
+  color: #d0d0d8;
+}
+
+.medal.gold { background: #e8e8e8; color: #0d0d0f; }
+.medal.silver { background: #b0b0b8; color: #0d0d0f; }
+.medal.bronze { background: #8a8a94; color: #0d0d0f; }
+
+/* Владельцы и роли */
+.owners {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.owner-card {
+  background: #16161a;
+  border: 1px solid #2a2a30;
+  border-radius: 14px;
+  padding: 25px 35px;
+  text-align: center;
+  min-width: 170px;
+  position: relative;
+  overflow: hidden;
+}
+
+.owner-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #ffffff;
+}
+
+/* Цветные полоски под роли */
+.owner-card.role-owner::before { background: #ffffff; }
+.owner-card.role-curator::before { background: #d0d0d8; }
+.owner-card.role-support::before { background: #a8a8b2; }
+.owner-card.role-mod::before { background: #8a8a94; }
+.owner-card.role-helper::before { background: #6a6a76; }
+
+.owner-card .avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #0d0d0f;
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.owner-card h2 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.owner-card .role {
+  color: #8f8f9a;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.owner-card .role .icon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Заголовки страниц */
+.page-title {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.page-title .icon {
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
+}
+
+.page-subtitle {
+  color: #9a9aa4;
+  margin-bottom: 25px;
+}
+
+/* Правила */
+.rule-list {
+  list-style: none;
+  counter-reset: rule;
+}
+
+.rule-list li {
+  counter-increment: rule;
+  background: #16161a;
+  border-left: 3px solid #ffffff;
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-bottom: 14px;
+  position: relative;
+  padding-left: 60px;
+  color: #d0d0d8;
+}
+
+.rule-list li::before {
+  content: counter(rule);
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #8f8f9a;
+}
+
+/* Футер */
+footer {
+  background: #16161a;
+  border-top: 1px solid #2a2a30;
+  text-align: center;
+  padding: 25px;
+  color: #8a8a94;
+  font-size: 0.9rem;
+}
+
+footer strong {
+  color: #ffffff;
+}
+
+footer a {
+  color: #b8b8c0;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+footer .icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero h1 .icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  nav ul {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+}
